@@ -2,7 +2,9 @@ package de.tdrstudios.spawn;
 
 import de.tdrstudios.spawn.commands.Pmsg;
 import jdk.nashorn.internal.objects.annotations.Setter;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -59,8 +61,11 @@ public class SpawnPlugin extends JavaPlugin implements CommandExecutor {
                 config.set("Y" , destination.getBlockY());
                 config.set("Z", destination.getBlockZ());
                 config.set("world", destination.getWorld());
+                config.set("worldname", destination.getWorld().getName());
                 config.set("YAW" , destination.getYaw());
                 config.set("PICH" , destination.getPitch());
+
+
 
 
                 this.saveConfig();
@@ -75,7 +80,18 @@ public class SpawnPlugin extends JavaPlugin implements CommandExecutor {
         }
         if(cmd.getName().equalsIgnoreCase("spawn")) {
             if(p.hasPermission("tdrstudios.spawm")) {
-               Location spawnpoint;
+                Location spawnpoint = p.getLocation();
+               spawnpoint.setX(config.getDouble("X"));
+               spawnpoint.setY(config.getDouble("Y"));
+               spawnpoint.setZ(config.getDouble("Z"));
+               spawnpoint.setWorld(Bukkit.getWorld(config.get("worldname").toString()));
+               spawnpoint.setPitch(config.getLong("PITCH"));
+               spawnpoint.setYaw(config.getLong("YAW"));
+               
+               p.teleport(spawnpoint);
+                System.out.println("[SpawmPlugin] ");
+
+
 
 
             }
