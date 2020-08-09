@@ -1,5 +1,6 @@
 package de.tdrstudios.spawn;
 
+import de.tdrstudios.spawn.commands.Pmsg;
 import jdk.nashorn.internal.objects.annotations.Setter;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -38,7 +39,7 @@ public class SpawnPlugin extends JavaPlugin implements CommandSender{
     }
 
     public void initConfig() {
-        config.addDefault("Spawnpoint: ", dummyloc);
+        config.addDefault("spawnpoint: ", dummyloc);
         this.saveDefaultConfig();
 
     }
@@ -49,9 +50,21 @@ public class SpawnPlugin extends JavaPlugin implements CommandSender{
 
 
         Player p = (Player) sender;
+        Location destination = p.getLocation();
         if(cmd.getName().equalsIgnoreCase("setspawn"))
         {
-            if
+            if(p.hasPermission("tdrstudios.setspawn")) {
+
+                config.addDefault("spawnpoint" ,  destination);
+
+                Pmsg.send(p, "Set the Spawn to " + destination.getBlockX() + "/" + destination.getBlockZ());
+
+
+            }
+
+            }else {
+                p.sendMessage(Prefix.getNoPerms());
+            }
         }
 
 
