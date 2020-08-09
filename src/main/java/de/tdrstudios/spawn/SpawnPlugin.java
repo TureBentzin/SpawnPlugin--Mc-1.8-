@@ -71,12 +71,15 @@ public class SpawnPlugin extends JavaPlugin implements CommandExecutor {
                 this.saveConfig();
 
                 Pmsg.send(p, "Set the Spawn to " + destination.getBlockX() + "/" + destination.getBlockZ());
+                System.out.println("[SpawnSystem] Set new Spawm by "+ p.getDisplayName());
 
 
+            }else {
+                p.sendMessage(Prefix.getNoPerms());
             }
 
         } else {
-            p.sendMessage(Prefix.getNoPerms());
+
         }
         if(cmd.getName().equalsIgnoreCase("spawn")) {
             if(p.hasPermission("tdrstudios.spawm")) {
@@ -89,8 +92,8 @@ public class SpawnPlugin extends JavaPlugin implements CommandExecutor {
                spawnpoint.setYaw(config.getLong("YAW"));
                
                p.teleport(spawnpoint);
-                System.out.println("[SpawmPlugin] ");
-
+                System.out.println("[SpawmPlugin] " +  p.getDisplayName() + " was send to Spawn");
+                Pmsg.send(p, " Teleport to Spawn!");
 
 
 
