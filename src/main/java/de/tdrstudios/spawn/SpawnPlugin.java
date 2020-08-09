@@ -28,7 +28,7 @@ public class SpawnPlugin extends JavaPlugin implements CommandExecutor {
 
 
         System.out.println("[TDRStudios] Spawn Pl wird geladen!");
-        this.getServer().getPluginManager().registerEvents(new JoinEvent(), this);
+        //this.getServer().getPluginManager().registerEvents(new JoinEvent(), this);
         initConfig();
     }
 
@@ -54,13 +54,14 @@ public class SpawnPlugin extends JavaPlugin implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("setspawn")) {
             if (p.hasPermission("tdrstudios.setspawn")) {
 
-                config.addDefault("spawnpoint", destination);
-                config.addDefault("X" , destination.getBlockX());
-                config.addDefault("Y" , destination.getBlockY());
-                config.addDefault("Z", destination.getBlockZ());
-                config.addDefault("world", destination.getWorld());
-                config.addDefault("YAW" , destination.getYaw());
-                config.addDefault("PICH" , destination.getPitch());
+                config.set("spawnpoint", destination);
+                config.set("X" , destination.getBlockX());
+                config.set("Y" , destination.getBlockY());
+                config.set("Z", destination.getBlockZ());
+                config.set("world", destination.getWorld());
+                config.set("YAW" , destination.getYaw());
+                config.set("PICH" , destination.getPitch());
+
 
                 this.saveConfig();
 
