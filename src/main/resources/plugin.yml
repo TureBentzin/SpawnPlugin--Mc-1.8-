@@ -1,1 +1,4 @@
-name:
+name: SpawnPlugin
+author: TDR_Minecraft
+version: tdrstudios.01
+main: de.tdrstudios.spawn.SpawnPlugin
