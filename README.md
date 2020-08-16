@@ -11,7 +11,7 @@ des eingebenden Spielers Speichern und bei eingabe des Commands **/spawn** diese
 abrufen und den Spieler zur Position teleportieren!
 
 
-<h2> Commands und Permissions <h2>
+<h2> Commands und Permissions </h2>
  
  |  Command      | Permission                          |   Beschreibung        |
 |----------------|-------------------------------|-----------------------------|
