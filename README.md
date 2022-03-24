@@ -3,11 +3,11 @@
  
  <h2> Was kann dieses Minecraft Plugin? </h2>
  
-> Dieses Plugin ist ein sehr Simples /spawn und /setspawn Plugin
+> Dieses Plugin ist ein sehr simples /spawn und /setspawn Plugin
 > das als Informations Quelle für änliche Projekte dienen soll!
 
-Das Plugin kann nach eingabe des Commands **/setspawn** die Position und Welt
-des eingebenden Spielers Speichern und bei eingabe des Commands **/spawn** diese
+Das Plugin kann nach Eingabe des Commands **/setspawn** die Position und Welt
+des eingebenden Spielers speichern und bei Eingabe des Commands **/spawn** diese
 abrufen und den Spieler zur Position teleportieren!
 
 
@@ -15,9 +15,9 @@ abrufen und den Spieler zur Position teleportieren!
  
  |  Command      | Permission                          |   Beschreibung        |
 |----------------|-------------------------------|-----------------------------|
-| **/setspawn**      |`tdrstudios.setspawm`         | Setzte den Neuen Spawn an deiner Position         |
+| **/setspawn**      |`tdrstudios.setspawm`         | Setzte den neuen Spawn an deiner Position         |
 | **/spawn**         |`tdrstudios.spawn`            | Teleportiere dich zum Spawn         |
 
 
 
-> Ein TDRStudios Beispiel Projekt
+> Ein "TDRStudios Example Repository"
